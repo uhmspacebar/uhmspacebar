@@ -1,0 +1,20 @@
+'student' {
+  'name',
+  'level',
+  'major',
+  'interests',
+}
+'club' {
+  'name',
+  'interests',
+  'restriction', //major, level
+  'memberCount',
+  'registrationFee',
+  'contact',
+  'event': [{
+    event1,
+    event2,
+    ....
+  }],
+  
+}
