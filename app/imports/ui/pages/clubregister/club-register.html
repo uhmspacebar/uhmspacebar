@@ -1,0 +1,41 @@
+<template name="Register_Club_Page">
+
+{{#if Template.subscriptionsReady}}
+
+  <div class="ui text container segment">
+    <div class="ui dividing header">
+      Club Register
+    </div>
+    <form class="ui equal width form club-data-form {{ successClass }} {{ errorClass }}">
+
+      <div class="fields">
+        {{> Text_Form_Control label="Club Name" placeholder="IEEE-HKN Delta Omega" value=club.name errorMessage=(fieldError "name")}}
+      </div>
+
+      <div class="field">
+        {{> Select_Form_Control label="Major Affiliation" options=majors errorMessage=(fieldError "majors") multiple=false}}
+      </div>
+
+      <div class="field">
+        {{> Select_Form_Control label="Interests" options=interests errorMessage=(fieldError "interests") multiple=true }}
+      </div>
+
+      <div class="fields">
+        {{> Text_Form_Control label="Picture" placeholder="http://foo.com/shot.jpg" value=profile.picture errorMessage=(fieldError "picture")}}
+      </div>
+
+      {{> TextArea_Form_Control label="Bio" value=profile.bio placeholder="Short bio statement here" errorMessage=(fieldError "bio")}}
+
+
+      <button class="ui primary button" type="submit">Submit</button>
+      {{#if displaySuccessMessage}}
+        <div class="ui success message">
+          <p>Profile data successfully updated.</p>
+        </div>
+      {{/if}}
+    </form>
+  </div>
+
+  {{/if}}
+
+</template>
