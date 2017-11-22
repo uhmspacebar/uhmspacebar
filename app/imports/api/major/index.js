@@ -1,0 +1,1 @@
+import '../major/MajorCollection.js';

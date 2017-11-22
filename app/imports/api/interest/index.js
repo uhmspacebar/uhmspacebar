@@ -1,1 +1,1 @@
-import './InterestCollection.js';
+import '../interest/InterestCollection.js';

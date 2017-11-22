@@ -1,0 +1,16 @@
+.ui.contact.dividing.header{
+  background-color:#5b5f66;
+  color: whitesmoke;
+  height:40px;
+  text-align:center;
+  padding-top:5px;
+  box-shadow: 10px 10px 5px #888888;
+
+}
+
+.ui.text.container {
+  margin:0px;
+  box-shadow: 10px 10px 5px #888888;
+  max-width: 1000px !important;
+
+}

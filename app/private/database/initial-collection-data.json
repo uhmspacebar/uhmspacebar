@@ -2,6 +2,64 @@
   "comment": "Initial contents for the BowFolios database. For development purposes only.",
   "collections": [
     {
+      "name": "MajorCollection",
+     "contents": [
+       {
+         "name": "Electrical Engineering",
+       },
+       {
+         "name": "Computer Engineering",
+       },
+       {
+         "name": "Civil Engineering",
+       },
+       {
+         "name": "Mechanical Engineering",
+       },
+       {
+         "name": "Ocean Engineering",
+       },
+       {
+         "name": "Information and Computer Science",
+       },
+       {
+         "name": "Math",
+       },
+       {
+         "name": "Chemistry",
+       },
+       {
+         "name": "Physics",
+       },
+       {
+         "name": "Biology",
+       },
+       {
+         "name": "Pre-Med",
+       },
+       {
+         "name": "Pre-Law",
+       }
+     ]
+    },
+    {
+      "name": "SizeCollection",
+      "contents": [
+        {
+          "size": "Small"
+        },
+        {
+          "size": "Medium"
+        },
+        {
+          "size": "Large"
+        },
+        {
+          "size": "Everybody"
+        }
+      ]
+    },
+    {
       "name": "InterestCollection",
       "contents": [
         {
