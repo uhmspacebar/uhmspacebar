@@ -5,40 +5,40 @@
       "name": "MajorCollection",
      "contents": [
        {
-         "name": "Electrical Engineering",
+         "name": "Electrical Engineering"
        },
        {
-         "name": "Computer Engineering",
+         "name": "Computer Engineering"
        },
        {
-         "name": "Civil Engineering",
+         "name": "Civil Engineering"
        },
        {
-         "name": "Mechanical Engineering",
+         "name": "Mechanical Engineering"
        },
        {
-         "name": "Ocean Engineering",
+         "name": "Ocean Engineering"
        },
        {
-         "name": "Information and Computer Science",
+         "name": "Information and Computer Science"
        },
        {
-         "name": "Math",
+         "name": "Math"
        },
        {
-         "name": "Chemistry",
+         "name": "Chemistry"
        },
        {
-         "name": "Physics",
+         "name": "Physics"
        },
        {
-         "name": "Biology",
+         "name": "Biology"
        },
        {
-         "name": "Pre-Med",
+         "name": "Pre-Med"
        },
        {
-         "name": "Pre-Law",
+         "name": "Pre-Law"
        }
      ]
     },

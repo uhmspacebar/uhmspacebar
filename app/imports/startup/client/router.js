@@ -76,6 +76,14 @@ userRoutes.route('/club_register', {
   },
 });
 
+export const clubAdminRouteName = 'Club_Admin_Page';
+userRoutes.route('/club_admin', {
+  name: clubAdminRouteName,
+  action() {
+    BlazeLayout.render('User_Layout', { main: clubAdminRouteName });
+  },
+});
+
 /*                        MISC ROUTES                       */
 FlowRouter.notFound = {
   action() {
