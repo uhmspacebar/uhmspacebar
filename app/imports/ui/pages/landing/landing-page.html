@@ -10,11 +10,11 @@
     <div class="ui grid">
       <div class="row">
         <div class="ui center aligned sixteen wide column">
-          <h1 class="landing-section-1-welcome"><img src="/images/spacebar1.jpg"></h1>
+          <h1 class="landing-section-1-welcome"><img src="/images/UHMSpacebar_logo_r1.gif" style="padding-top:150px"></h1>
         </div>
       </div>
       <div class="row">
-        <div class="ui center aligned sixteen wide column">
+        <div class="ui center aligned sixteen wide column" style="padding-top: 400px">
           {{> Cas_Login }}
         </div>
       </div>
@@ -22,7 +22,7 @@
   </div>
 
   <div class="landing-section-2">
-    <div class="ui grid">
+    <div class="ui grid" style="padding-top:150px">
       <div class="ui eight wide middle aligned column">
         <h1 class="landing-section-header">Find clubs that match your interest.</h1>
       </div>
@@ -33,7 +33,7 @@
   </div>
 
   <div class="landing-section-3">
-    <div class="ui grid">
+    <div class="ui grid" style="padding-top:150px">
       <div class="ui eight wide middle aligned column">
         <h1 class="landing-section-header">There are many clubs for you to join</h1>
       </div>
@@ -43,21 +43,37 @@
     </div>
   </div>
 
+<!-- infograph section -->
+
   <div class="landing-section-2">
-    <div class="ui grid">
-      <div class="ui eight wide middle aligned column">
-        <h1 class="landing-section-header">Come enter SpaceBar.</h1>
+
+    <div class="ui grid" style="padding-top:150px; padding-left:200px">
+      <div class="five wide column">
+        <canvas id="activemembers" width="200" height="200"></canvas>
       </div>
+
+      <div class="five wide column" style="padding-left:100px">
+        <canvas id="events" width="200" height="200"></canvas>
+      </div>
+
+      <div class="five wide column" style="padding-left:100px">
+        <canvas id="activity" width="200" height="200"></canvas>
+      </div>
+
+      <div class="ui eight wide middle aligned column">
+        <h1 class="landing-section-header">Keep track of member activity at all times.</h1>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="landing-section-3">
+    <div class="ui grid" style="padding-top:150px">
+      <h1 class="landing-section-header" style="padding-left:630px">Come enter SpaceBar.</h1>
+
       <div class="ui eight wide middle aligned column">
         <table class="ui centered table1">
-          <tr>
-            <td>profile image</td>
-            <td><img class="ui centered medium image" src="/images/filter.jpg"></td>
-          </tr>
-          <tr>
-            <td>user profile image</td>
-            <td>event picture</td>
-          </tr>
         </table>
       </div>
     </div>

@@ -3,14 +3,13 @@ import { ReactiveDict } from 'meteor/reactive-dict';
 import { FlowRouter } from 'meteor/kadira:flow-router';
 import { _ } from 'meteor/underscore';
 import Chart from 'chart.js';
-import './club-admin.html'
+import './landing-page.html'
 
+Chart.defaults.global.defaultFontColor = "#E5F9E7";
 
 
 const displaySuccessMessage = 'displaySuccessMessage';
 const displayErrorMessages = 'displayErrorMessages';
-
-
 
 var activeMemberData = {
   labels: [
@@ -33,12 +32,12 @@ var activeMemberData = {
     }]
 };
 
-Template.Club_Admin_Page.helpers(activeMemberData);
+Template.Landing_Page.helpers(activeMemberData);
 
-Template.Club_Admin_Page.onCreated(function onCreated() {
+Template.Landing_Page.onCreated(function onCreated() {
 });
 
-Template.Club_Admin_Page.onRendered(function () {
+Template.Landing_Page.onRendered(function () {
   let activeMemberCtx = $("#activemembers").get(0).getContext("2d");
   var doughnutChart = new Chart(activeMemberCtx, {
     type: 'doughnut',
@@ -56,11 +55,11 @@ Template.Club_Admin_Page.onRendered(function () {
       datasets: [{
         label: 'Non-Members',
         data: [12, 19, 3, 17, 6, 3, 7],
-        backgroundColor: "rgba(153,255,51,0.4)"
+        backgroundColor: "#FF6384",
       }, {
         label: 'Members',
         data: [2, 29, 5, 5, 2, 3, 10],
-        backgroundColor: "rgba(255,153,0,0.4)"
+        backgroundColor: "#63FF84",
       }]
     },
     options: {
@@ -76,11 +75,11 @@ Template.Club_Admin_Page.onRendered(function () {
       datasets: [{
         label: 'Non-Members',
         data: [12, 19, 3, 17, 6, 3, 7],
-        backgroundColor: "rgba(153,255,51,0.4)"
+        backgroundColor: "#FF6384",
       }, {
         label: 'Members',
         data: [2, 29, 5, 5, 2, 3, 10],
-        backgroundColor: "rgba(255,153,0,0.4)"
+        backgroundColor: "#63FF84",
       }]
     },
     options: {
@@ -89,12 +88,12 @@ Template.Club_Admin_Page.onRendered(function () {
   });
 })
 
-Template.Club_Admin_Page.helpers({
+Template.Landing_Page.helpers({
 
 });
 
 
-Template.Club_Admin_Page.events({
+Template.Landing_Page.events({
 
 });
 
