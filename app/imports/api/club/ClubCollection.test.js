@@ -13,6 +13,7 @@ if (Meteor.isServer) {
     const about = 'We very much so absolutely like to do things, sometimes with computers.';
     const ownerUsername = 'obama';
     const abbreviation = 'GH-UHM';
+    const major = 'ICS';
     const picture = 'http://philipmjohnson.org/headshot.jpg';
     const github = 'http://github.com/philipjohnson';
     const facebook = 'http://github.com/philipjohnson';
@@ -24,6 +25,7 @@ if (Meteor.isServer) {
       ownerUsername,
       abbreviation,
       picture,
+      major,
       github,
       facebook,
       instagram,
@@ -48,6 +50,7 @@ if (Meteor.isServer) {
       expect(doc.ownerUsername).to.equal(ownerUsername);
       expect(doc.abbreviation).to.equal(abbreviation);
       expect(doc.picture).to.equal(picture);
+      expect(doc.major).to.equal(major);
       expect(doc.github).to.equal(github);
       expect(doc.facebook).to.equal(facebook);
       expect(doc.instagram).to.equal(instagram);

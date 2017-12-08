@@ -24,6 +24,7 @@ class ClubCollection extends BaseCollection {
       ownerUsername: { type: String },
       // Remainder are optional
       abbreviation: {type: String, optional: true },
+      major: {type: String, optional: true },
       picture: { type: SimpleSchema.RegEx.Url, optional: true },
       github: { type: SimpleSchema.RegEx.Url, optional: true },
       facebook: { type: SimpleSchema.RegEx.Url, optional: true },
@@ -40,6 +41,7 @@ class ClubCollection extends BaseCollection {
    *    about: 'The Grey Hats is a student-led, extracurricular activity focuses on real-world training for cyber defense.',
    *    ownerUsername: 'lafwandu',
    *    abbreviation: 'GH-UHM',
+   *    major: 'ICS'
    *    picture: 'http://something.io/hosting/b/greyhats/image00001.jpg',
    *    github: 'http://github.comuhmgreyhats/',
    *    facebook: 'facebook.com/greyhatsuhm',
@@ -52,7 +54,7 @@ class ClubCollection extends BaseCollection {
    * of the four required fields are not included.
    * @returns The newly created docID.
    */
-  define({ name, caption, about, ownerUsername, abbreviation = '', picture = '', github = '', facebook = '', instagram = ''}) {
+  define({ name, caption, about, ownerUsername, abbreviation = '', picture = '', github = '', major = '', facebook = '', instagram = ''}) {
     // make sure required fields are OK.
     const checkPattern = {
       name: String,
@@ -62,11 +64,12 @@ class ClubCollection extends BaseCollection {
       abbreviation: String,
       picture: String,
       github: String,
+      major: String,
       facebook: String,
       instagram: String
     };
     check(
-        { name, caption, about, ownerUsername, abbreviation,  picture, github, facebook, instagram },
+        { name, caption, about, ownerUsername, abbreviation,  picture, github, major, facebook, instagram },
         checkPattern
     );
 
@@ -74,7 +77,7 @@ class ClubCollection extends BaseCollection {
       throw new Meteor.Error(`${name} is previously defined as another Club`);
     }
 
-    return this._collection.insert({ name, caption, about, ownerUsername, abbreviation, picture, github, facebook, instagram });
+    return this._collection.insert({ name, caption, about, ownerUsername, abbreviation, major, picture, github, facebook, instagram });
   }
 
   /**
@@ -91,6 +94,7 @@ class ClubCollection extends BaseCollection {
     const abbreviation = doc.abbreviation;
     const picture = doc.picture;
     const github = doc.github;
+    const major = doc.major;
     const facebook = doc.facebook;
     const instagram = doc.instagram;
     return {
@@ -100,6 +104,7 @@ class ClubCollection extends BaseCollection {
       ownerUsername,
       abbreviation,
       picture,
+      major,
       github,
       facebook,
       instagram
