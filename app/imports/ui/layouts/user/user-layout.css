@@ -59,7 +59,7 @@
 }
 .clouds{
   background:transparent url(images/clouds.png) repeat top center;
-  z-index:3;
+  z-index:-1;
   -moz-animation:move-clouds-back 200s linear infinite;
   -ms-animation:move-clouds-back 200s linear infinite;
   -o-animation:move-clouds-back 200s linear infinite;
