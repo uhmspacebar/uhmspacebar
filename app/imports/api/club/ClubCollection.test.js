@@ -15,6 +15,8 @@ if (Meteor.isServer) {
     const abbreviation = 'GH-UHM';
     const major = 'ICS';
     const majors = [major];
+    const interest = 'Software Engineering';
+    const clubInterests = [interest];
     const picture = 'http://philipmjohnson.org/headshot.jpg';
     const github = 'http://github.com/philipjohnson';
     const facebook = 'http://github.com/philipjohnson';
@@ -27,6 +29,7 @@ if (Meteor.isServer) {
       abbreviation,
       picture,
       majors,
+      clubInterests,
       github,
       facebook,
       instagram,
@@ -52,6 +55,7 @@ if (Meteor.isServer) {
       expect(doc.abbreviation).to.equal(abbreviation);
       expect(doc.picture).to.equal(picture);
       expect(doc.majors[0]).to.equal(major);
+      expect(doc.clubInterests[0]).to.equal(interest);
       expect(doc.github).to.equal(github);
       expect(doc.facebook).to.equal(facebook);
       expect(doc.instagram).to.equal(instagram);

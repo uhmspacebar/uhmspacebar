@@ -4,6 +4,9 @@ import { check } from 'meteor/check';
 import { Meteor } from 'meteor/meteor';
 import { _ } from 'meteor/underscore';
 import { Tracker } from 'meteor/tracker';
+import { Interests } from '/imports/api/interest/InterestCollection';
+import { Majors } from '/imports/api/major/MajorCollection';
+
 
 /** @module Club */
 
@@ -26,6 +29,8 @@ class ClubCollection extends BaseCollection {
       abbreviation: {type: String, optional: true },
       majors: { type: Array, optional: true },
       'majors.$': { type: String },
+      clubInterests: { type: Array, optional: true },
+      'interests.$': { type: String },
       picture: { type: SimpleSchema.RegEx.Url, optional: true },
       github: { type: SimpleSchema.RegEx.Url, optional: true },
       facebook: { type: SimpleSchema.RegEx.Url, optional: true },
@@ -55,13 +60,12 @@ class ClubCollection extends BaseCollection {
    * of the four required fields are not included.
    * @returns The newly created docID.
    */
-  define({ clubName, caption, about, username, abbreviation = '', picture = '', github = '', majors = [], facebook = '', instagram = ''}) {
+  define({ clubName, caption, about, abbreviation = '', picture = '', github = '', majors = [], clubInterests = [], facebook = '', instagram = ''}) {
     // make sure required fields are OK.
     const checkPattern = {
       clubName: String,
       caption: String,
       about: String,
-      username: String,
       abbreviation: String,
       picture: String,
       github: String,
@@ -69,7 +73,7 @@ class ClubCollection extends BaseCollection {
       instagram: String
     };
     check(
-        { clubName, caption, about, username, abbreviation,  picture, github, facebook, instagram },
+        { clubName, caption, about, abbreviation,  picture, github, facebook, instagram },
         checkPattern
     );
 
@@ -77,7 +81,15 @@ class ClubCollection extends BaseCollection {
       throw new Meteor.Error(`${clubName} is previously defined as another Club`);
     }
 
-    return this._collection.insert({ clubName, caption, about, username, abbreviation, majors, picture, github, facebook, instagram });
+    // Throw an error if any of the passed Interest names are not defined.
+    Interests.assertNames(interests);
+
+    // Throw an error if there are duplicates in the passed interest names.
+    if (interests.length !== _.uniq(interests).length) {
+      throw new Meteor.Error(`${interests} contains duplicates`);
+    }
+
+    return this._collection.insert({ clubName, caption, about, abbreviation, majors, clubInterests, picture, github, facebook, instagram });
   }
 
   /**
@@ -95,6 +107,7 @@ class ClubCollection extends BaseCollection {
     const picture = doc.picture;
     const github = doc.github;
     const majors = doc.majors;
+    const clubInterests = doc.clubInterests;
     const facebook = doc.facebook;
     const instagram = doc.instagram;
     return {
@@ -105,6 +118,7 @@ class ClubCollection extends BaseCollection {
       abbreviation,
       picture,
       majors,
+      clubInterests,
       github,
       facebook,
       instagram
