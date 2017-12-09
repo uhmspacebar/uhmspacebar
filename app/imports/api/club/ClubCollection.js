@@ -18,7 +18,7 @@ class ClubCollection extends BaseCollection {
    */
   constructor() {
     super('Club', new SimpleSchema({
-      name: { type: String },
+      clubName: { type: String },
       caption: { type: String },
       about: { type: String },
       username: { type: String },
@@ -37,7 +37,7 @@ class ClubCollection extends BaseCollection {
    * Defines a new Club.
    * @example
    * Clubs.define({
-   *    name: 'Grey Hats UHM',
+   *    clubName: 'Grey Hats UHM',
    *    caption: 'Grey Hats from the University of Hawaii at Manoa',
    *    about: 'The Grey Hats is a student-led, extracurricular activity focuses on real-world training for cyber defense.',
    *    ownerUsername: 'lafwandu',
@@ -55,10 +55,10 @@ class ClubCollection extends BaseCollection {
    * of the four required fields are not included.
    * @returns The newly created docID.
    */
-  define({ name, caption, about, ownerUsername, abbreviation = '', picture = '', github = '', majors = [], facebook = '', instagram = ''}) {
+  define({ clubName, caption, about, username, abbreviation = '', picture = '', github = '', majors = [], facebook = '', instagram = ''}) {
     // make sure required fields are OK.
     const checkPattern = {
-      name: String,
+      clubName: String,
       caption: String,
       about: String,
       username: String,
@@ -69,15 +69,15 @@ class ClubCollection extends BaseCollection {
       instagram: String
     };
     check(
-        { name, caption, about, ownerUsername, abbreviation,  picture, github, facebook, instagram },
+        { clubName, caption, about, username, abbreviation,  picture, github, facebook, instagram },
         checkPattern
     );
 
-    if (this.find({ name }).count() > 0) {
-      throw new Meteor.Error(`${name} is previously defined as another Club`);
+    if (this.find({ clubName }).count() > 0) {
+      throw new Meteor.Error(`${clubName} is previously defined as another Club`);
     }
 
-    return this._collection.insert({ name, caption, about, ownerUsername, abbreviation, majors, picture, github, facebook, instagram });
+    return this._collection.insert({ clubName, caption, about, username, abbreviation, majors, picture, github, facebook, instagram });
   }
 
   /**
@@ -87,7 +87,7 @@ class ClubCollection extends BaseCollection {
    */
   dumpOne(docID) {
     const doc = this.findDoc(docID);
-    const name = doc.name;
+    const clubName = doc.clubName;
     const caption = doc.caption;
     const about = doc.about;
     const username = doc.username;
@@ -98,7 +98,7 @@ class ClubCollection extends BaseCollection {
     const facebook = doc.facebook;
     const instagram = doc.instagram;
     return {
-      name,
+      clubName,
       caption,
       about,
       username,

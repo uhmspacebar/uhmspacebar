@@ -8,7 +8,7 @@ import { removeAllEntities } from '/imports/api/base/BaseUtilities';
 
 if (Meteor.isServer) {
   describe('ClubCollection', function testSuite() {
-    const name = 'Grey Hats';
+    const clubName = 'Grey Hats';
     const caption = 'We do things';
     const about = 'We very much so absolutely like to do things, sometimes with computers.';
     const username = 'obama';
@@ -20,7 +20,7 @@ if (Meteor.isServer) {
     const facebook = 'http://github.com/philipjohnson';
     const instagram = 'http://github.com/philipjohnson';
     const defineObject = {
-      name,
+      clubName,
       caption,
       about,
       username,
@@ -45,7 +45,7 @@ if (Meteor.isServer) {
       expect(Clubs.isDefined(docID)).to.be.true;
       // Check that fields are available
       const doc = Clubs.findDoc(docID);
-      expect(doc.name).to.equal(name);
+      expect(doc.clubName).to.equal(clubName);
       expect(doc.caption).to.equal(caption);
       expect(doc.about).to.equal(about);
       expect(doc.username).to.equal(username);
