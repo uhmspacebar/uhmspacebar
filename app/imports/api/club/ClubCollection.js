@@ -21,11 +21,11 @@ class ClubCollection extends BaseCollection {
    */
   constructor() {
     super('Club', new SimpleSchema({
-      clubName: { type: String },
-      caption: { type: String },
-      about: { type: String },
       username: { type: String },
       // Remainder are optional
+      clubName: { type: String, optional: true  },
+      caption: { type: String, optional: true  },
+      about: { type: String, optional: true  },
       abbreviation: {type: String, optional: true },
       majors: { type: Array, optional: true },
       'majors.$': { type: String },
@@ -60,7 +60,7 @@ class ClubCollection extends BaseCollection {
    * of the four required fields are not included.
    * @returns The newly created docID.
    */
-  define({ clubName, caption, about, abbreviation = '', picture = '', github = '', majors = [], interests = [], facebook = '', instagram = '', username}) {
+  define({ clubName = '', caption = '', about = '', abbreviation = '', picture = '', github = '', majors = [], interests = [], facebook = '', instagram = '', username}) {
     // make sure required fields are OK.
     const checkPattern = {
       clubName: String,

@@ -38,7 +38,7 @@ Template.Landing_Page.onCreated(function onCreated() {
 });
 
 Template.Landing_Page.onRendered(function () {
-  let activeMemberCtx = $("#activemembers").get(0).getContext("2d");
+  let activeMemberCtx = this.$("#activemembers");
   var doughnutChart = new Chart(activeMemberCtx, {
     type: 'doughnut',
     data: activeMemberData,

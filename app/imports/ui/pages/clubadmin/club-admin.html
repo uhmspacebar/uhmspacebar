@@ -1,57 +1,62 @@
 <template name="Club_Admin_Page">
-
   {{#if Template.subscriptionsReady}}
-  <div style="margin-top: 10px" class="ui text container segment">
-    <div class="ui five cards">
-      <img class="profile card" src="http://images.clipartpanda.com/group-clipart-clip-art-group.png">
-        <a class="red card" style="margin-left:150px">
-          <div class="image">
-            <img style="height: 20%;" src="https://i.pinimg.com/736x/e6/11/7e/e6117ed721289d630b83d84e76039759--beautiful-beach-beautiful-pictures.jpg">
-          </div>
-        </a>
-        <a class="orange card">
-          <div class="image">
-            <img style="height: 20%;" src="https://www.usnews.com/img/college-photo_31353_256x256mm.jpg">
-          </div>
-        </a>
-        <a class="yellow card">
-          <div class="image">
-            <img style="height: 20%;" src="http://farm1.static.flickr.com/615/20871260305_c326c125f6.jpg">
-          </div>
-        </a>
+    {{#if clubAdminValidation}}
+      <div style="margin-top: 10px" class="ui text container segment">
+        <div class="ui five cards">
+          <img class="profile card" src="http://images.clipartpanda.com/group-clipart-clip-art-group.png">
+            <a class="red card" style="margin-left:150px">
+              <div class="image">
+                <img style="height: 20%;" src="https://i.pinimg.com/736x/e6/11/7e/e6117ed721289d630b83d84e76039759--beautiful-beach-beautiful-pictures.jpg">
+              </div>
+            </a>
+            <a class="orange card">
+              <div class="image">
+                <img style="height: 20%;" src="https://www.usnews.com/img/college-photo_31353_256x256mm.jpg">
+              </div>
+            </a>
+            <a class="yellow card">
+              <div class="image">
+                <img style="height: 20%;" src="http://farm1.static.flickr.com/615/20871260305_c326c125f6.jpg">
+              </div>
+            </a>
 
-    </div>
+        </div>
 
-    <div class="ui lower bar container">
-      <div class="ui grid" style="width:600px">
-        <div class="three wide column">Club Name</div>
-        <div class="three wide column"></div>
-        <div class="three wide column">Pending Requests</div>
-        <div class="three wide column">Current Members</div>
-        <div class="three wide column">Contact Information</div>
+        <div class="ui lower bar container">
+          <div class="ui grid" style="width:600px">
+            <div class="three wide column">Club Name</div>
+            <div class="three wide column"></div>
+            <div class="three wide column">Pending Requests</div>
+            <div class="three wide column">Current Members</div>
+            <div class="three wide column">Contact Information</div>
+          </div>
+        </div>
+
+        <div class="ui text container">
+
+          <div class="ui grid">
+
+            <div class="five wide column" style="padding-left:100px">
+              <canvas id="activemembers" width="200" height="200"></canvas>
+            </div>
+
+            <div class="five wide column" style="padding-left:100px">
+              <canvas id="events" width="200" height="200"></canvas>
+            </div>
+
+            <div class="five wide column" style="padding-left:100px">
+              <canvas id="activity" width="200" height="200"></canvas>
+            </div>
+
+          </div>
+        </div>
+
+
       </div>
-    </div>
-
-    <div class="ui text container">
-
-      <div class="ui grid">
-        <div class="five wide column" style="padding-left:100px">
-          <canvas id="activemembers" width="200" height="200"></canvas>
-        </div>
-
-        <div class="five wide column" style="padding-left:100px">
-          <canvas id="events" width="200" height="200"></canvas>
-        </div>
-
-        <div class="five wide column" style="padding-left:100px">
-          <canvas id="activity" width="200" height="200"></canvas>
-        </div>
-
+    {{else}}
+      <div class="ui text container segment" style="height:400px">
+            Please register a club first.
       </div>
-    </div>
-
-
-  </div>
+    {{/if}}
   {{/if}}
-
 </template>
