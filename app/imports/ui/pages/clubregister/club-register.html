@@ -11,22 +11,36 @@
 
       <i class="student icon"></i>
       <div class="fields">
-        {{> Text_Form_Control label="Club Name" placeholder="IEEE-HKN Delta Omega" value=club.name errorMessage=(fieldError "name")}}
-      </div>
+        {{> Text_Form_Control label="Name" placeholder="IEEE-HKN Delta Omega" value=club.clubName errorMessage=(fieldError "name")}}
+        {{> Text_Form_Control label="Abbreviation" placeholder="IEEE-HKN" value=club.abbrev errorMessage=(fieldError "abbrev")}}
 
-      <div class="field">
-        {{> Select_Form_Control label="Major Affiliation" options=majors errorMessage=(fieldError "majors") multiple=true}}
-      </div>
-
-      <div class="field">
-        {{> Select_Form_Control label="Club Interests" options=interests errorMessage=(fieldError "interests") multiple=true }}
       </div>
 
       <div class="fields">
-        {{> Text_Form_Control label="Picture" placeholder="http://foo.com/shot.jpg" value=profile.picture errorMessage=(fieldError "picture")}}
+        {{> Text_Form_Control label="Caption" placeholder="..." value=club.caption errorMessage=(fieldError "caption")}}
       </div>
 
-      {{> TextArea_Form_Control label="Bio" value=profile.bio placeholder="Short bio statement here" errorMessage=(fieldError "bio")}}
+      <div class="field">
+        {{> Select_Form_Control label="Majors" options=majors errorMessage=(fieldError "majors") multiple=true}}
+      </div>
+
+      <div class="field">
+        {{> Select_Form_Control label="Interests" options=interests errorMessage=(fieldError "interests") multiple=true }}
+      </div>
+
+      <div class="fields">
+        {{> Text_Form_Control label="Picture" placeholder="http://foo.com/shot.jpg" value=club.picture errorMessage=(fieldError "picture")}}
+      </div>
+
+      <div class="fields">
+
+        {{> Social_Network_Form_Control label="Github" icon="github" placeholder="pmjohnson" value=profile.github errorMessage=(fieldError "github")}}
+        {{> Social_Network_Form_Control label="Facebook" icon="facebook" placeholder="pmjohnson" value=profile.facebook errorMessage=(fieldError "facebook")}}
+        {{> Social_Network_Form_Control label="Instagram" icon="instagram" placeholder="pmjohnson" value=profile.instagram errorMessage=(fieldError "instagram")}}
+
+      </div>
+
+      {{> TextArea_Form_Control label="Bio" value=club.about placeholder="Short bio statement here" errorMessage=(fieldError "bio")}}
 
 
       <button class="ui primary button" type="submit">Submit</button>
