@@ -9,7 +9,7 @@ import './club-admin.html'
 
 const displaySuccessMessage = 'displaySuccessMessage';
 const displayErrorMessages = 'displayErrorMessages';
-const DELAY_FACTOR = 1000;
+const ONE_SECOND_DELAY = 1000;
 
 var activeMemberData = {
   labels: [
@@ -38,13 +38,12 @@ Template.Club_Admin_Page.onCreated(function onCreated() {
 
 Template.Club_Admin_Page.helpers({
   clubAdminValidation() {
-    return Clubs.findDoc(FlowRouter.getParam('username'));
+    const profile = Clubs.findDoc(FlowRouter.getParam('username'));
+    return profile.clubName;
   },
 });
 
-/* Delay is necessary in order to allow DOM to fully render */
-
-Template.Club_Admin_Page.rendered=Meteor.setTimeout(function () {
+Template.Club_Admin_Page.onRendered=Meteor.setTimeout(function () {
   let activeMemberCtx = this.$("#activemembers");
   var doughnutChart = new Chart(activeMemberCtx, {
     type: 'doughnut',
@@ -93,7 +92,10 @@ Template.Club_Admin_Page.rendered=Meteor.setTimeout(function () {
       responsive: false
     }
   });
-}, DELAY_FACTOR);
+}, ONE_SECOND_DELAY);
+
+
+/* Delay is necessary in order to allow DOM to fully render */
 
 
 Template.Club_Admin_Page.helpers({
