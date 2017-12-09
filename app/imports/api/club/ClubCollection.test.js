@@ -8,22 +8,25 @@ import { removeAllEntities } from '/imports/api/base/BaseUtilities';
 
 if (Meteor.isServer) {
   describe('ClubCollection', function testSuite() {
-    const name = 'Grey Hats';
+    const clubName = 'Grey Hats';
     const caption = 'We do things';
     const about = 'We very much so absolutely like to do things, sometimes with computers.';
-    const ownerUsername = 'obama';
+    const username = 'obama';
     const abbreviation = 'GH-UHM';
+    const major = 'ICS';
+    const majors = [major];
     const picture = 'http://philipmjohnson.org/headshot.jpg';
     const github = 'http://github.com/philipjohnson';
     const facebook = 'http://github.com/philipjohnson';
     const instagram = 'http://github.com/philipjohnson';
     const defineObject = {
-      name,
+      clubName,
       caption,
       about,
-      ownerUsername,
+      username,
       abbreviation,
       picture,
+      majors,
       github,
       facebook,
       instagram,
@@ -42,12 +45,13 @@ if (Meteor.isServer) {
       expect(Clubs.isDefined(docID)).to.be.true;
       // Check that fields are available
       const doc = Clubs.findDoc(docID);
-      expect(doc.name).to.equal(name);
+      expect(doc.clubName).to.equal(clubName);
       expect(doc.caption).to.equal(caption);
       expect(doc.about).to.equal(about);
-      expect(doc.ownerUsername).to.equal(ownerUsername);
+      expect(doc.username).to.equal(username);
       expect(doc.abbreviation).to.equal(abbreviation);
       expect(doc.picture).to.equal(picture);
+      expect(doc.majors[0]).to.equal(major);
       expect(doc.github).to.equal(github);
       expect(doc.facebook).to.equal(facebook);
       expect(doc.instagram).to.equal(instagram);

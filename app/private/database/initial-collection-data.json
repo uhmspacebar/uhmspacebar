@@ -2,6 +2,23 @@
   "comment": "Initial contents for the BowFolios database. For development purposes only.",
   "collections": [
     {
+      "name": "ClubCollection",
+      "contents": [
+        {
+          "clubName": "Institute of Electrical and Electronic Engineers",
+          "caption": "The world's largest technical professional organization for the advancement of technology",
+          "about": "We are Engineers",
+          "username": "chokevin",
+          "abbreviation": "IEEE",
+          "major": "Electrical Engineering",
+          "picture": "lol",
+          "github": "github",
+          "facebook": "facebook",
+          "instagram": "Instagram"
+        }
+      ]
+    },
+    {
       "name": "MajorCollection",
      "contents": [
        {
