@@ -50,18 +50,17 @@ Template.Register_Club_Page.helpers({
   },
 });
 
-
 Template.Register_Club_Page.events({
-  'submit .profile-data-form'(event, instance) {
+  'submit .club-data-form'(event, instance) {
     event.preventDefault();
-    const clubName = event.target.clubName.value;
+    const clubName = event.target.Name.value;
     const username = FlowRouter.getParam('username'); // schema requires username.
     const caption = ' ';
     const abbrev = ' ';
     const picture = event.target.Picture.value;
-    const github = event.target.Github.value;
-    const facebook = event.target.Facebook.value;
-    const instagram = event.target.Instagram.value;
+    const github = ' '
+    const facebook = ' ';
+    const instagram = ' ';
     const about = event.target.Bio.value;
     const selectedInterests = _.filter(event.target.Interests.selectedOptions, (option) => option.selected);
     const interests = _.map(selectedInterests, (option) => option.value);
@@ -69,8 +68,10 @@ Template.Register_Club_Page.events({
     const selectedMajors = _.filter(event.target.Majors.selectedOptions, (option) => option.selected);
     const majors = _.map(selectedMajors, (option) => option.value);
 
-    const updatedClubProfileData = { clubName, caption, about, abbrev, majors, picture, github, facebook, instagram, interests,
-      username };
+    const updatedClubProfileData = {
+      clubName, caption, about, abbrev, majors, picture, github, facebook, instagram, interests,
+      username
+    };
 
     // Clear out any old validation errors.
     instance.context.reset();

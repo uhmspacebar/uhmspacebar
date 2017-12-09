@@ -29,7 +29,7 @@ class ClubCollection extends BaseCollection {
       abbreviation: {type: String, optional: true },
       majors: { type: Array, optional: true },
       'majors.$': { type: String },
-      clubInterests: { type: Array, optional: true },
+      interests: { type: Array, optional: true },
       'interests.$': { type: String },
       picture: { type: SimpleSchema.RegEx.Url, optional: true },
       github: { type: SimpleSchema.RegEx.Url, optional: true },
@@ -60,7 +60,7 @@ class ClubCollection extends BaseCollection {
    * of the four required fields are not included.
    * @returns The newly created docID.
    */
-  define({ clubName, caption, about, abbreviation = '', picture = '', github = '', majors = [], clubInterests = [], facebook = '', instagram = ''}) {
+  define({ clubName, caption, about, abbreviation = '', picture = '', github = '', majors = [], interests = [], facebook = '', instagram = '', username}) {
     // make sure required fields are OK.
     const checkPattern = {
       clubName: String,
@@ -70,10 +70,11 @@ class ClubCollection extends BaseCollection {
       picture: String,
       github: String,
       facebook: String,
-      instagram: String
+      instagram: String,
+      username: String,
     };
     check(
-        { clubName, caption, about, abbreviation,  picture, github, facebook, instagram },
+        { clubName, caption, about, abbreviation,  picture, github, facebook, instagram, username},
         checkPattern
     );
 
@@ -89,7 +90,7 @@ class ClubCollection extends BaseCollection {
       throw new Meteor.Error(`${interests} contains duplicates`);
     }
 
-    return this._collection.insert({ clubName, caption, about, abbreviation, majors, clubInterests, picture, github, facebook, instagram });
+    return this._collection.insert({ clubName, caption, about, abbreviation, majors, interests, picture, github, facebook, instagram, username});
   }
 
   /**
@@ -107,7 +108,7 @@ class ClubCollection extends BaseCollection {
     const picture = doc.picture;
     const github = doc.github;
     const majors = doc.majors;
-    const clubInterests = doc.clubInterests;
+    const interests = doc.interests;
     const facebook = doc.facebook;
     const instagram = doc.instagram;
     return {
@@ -118,7 +119,7 @@ class ClubCollection extends BaseCollection {
       abbreviation,
       picture,
       majors,
-      clubInterests,
+      interests,
       github,
       facebook,
       instagram
