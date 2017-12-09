@@ -1,1 +1,1 @@
-import '../major/MajorCollection.js';
+import './MajorCollection.js';

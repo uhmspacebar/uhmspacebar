@@ -2,22 +2,22 @@ import { Template } from 'meteor/templating';
 import { ReactiveDict } from 'meteor/reactive-dict';
 import { FlowRouter } from 'meteor/kadira:flow-router';
 import { _ } from 'meteor/underscore';
-import { Profiles } from '/imports/api/profile/ProfileCollection';
+import { Clubs } from '/imports/api/club/ClubCollection';
 import { Majors } from '/imports/api/major/MajorCollection';
 
 const displaySuccessMessage = 'displaySuccessMessage';
 const displayErrorMessages = 'displayErrorMessages';
 
-Template.Profile_Page.onCreated(function onCreated() {
+Template.Register_Club_Page.onCreated(function onCreated() {
   this.subscribe(Majors.getPublicationName());
-  this.subscribe(Profiles.getPublicationName());
+  this.subscribe(Clubs.getPublicationName());
   this.messageFlags = new ReactiveDict();
   this.messageFlags.set(displaySuccessMessage, false);
   this.messageFlags.set(displayErrorMessages, false);
-  this.context = Profiles.getSchema().namedContext('Profile_Page');
+  this.context = Clubs.getSchema().namedContext('Register_Club_Page');
 });
 
-Template.Profile_Page.helpers({
+Template.Register_Club_Page.helpers({
   successClass() {
     return Template.instance().messageFlags.get(displaySuccessMessage) ? 'success' : '';
   },
@@ -27,21 +27,22 @@ Template.Profile_Page.helpers({
   errorClass() {
     return Template.instance().messageFlags.get(displayErrorMessages) ? 'error' : '';
   },
-  profile() {
-    return Profiles.findDoc(FlowRouter.getParam('username'));
+  club() {
+    return Clubs.findDoc(FlowRouter.getParam('username'));
   },
   majors() {
-    const profile = Profiles.findDoc(FlowRouter.getParam('username'));
-    const selectedInterests = profile.interests;
-    return _.map(Interests.findAll(),
-            function makeInterestObject(interest) {
-              return { label: interest.name, selected: _.contains(selectedInterests, interest.name) };
+    const profile = Clubs.findDoc(FlowRouter.getParam('username'));
+    console.log(profile);
+    const selectedMajor = profile.majors;
+    return profile && _.map(Majors.findAll(),
+            function makeMajorObject(major) {
+              return { label: major.name, selected: _.contains(selectedMajor, major.name) };
             });
   },
 });
 
 
-Template.Profile_Page.events({
+Template.Register_Club_Page.events({
   'submit .profile-data-form'(event, instance) {
     event.preventDefault();
     const firstName = event.target.First.value;

@@ -32,6 +32,7 @@ Template.Profile_Page.helpers({
   },
   interests() {
     const profile = Profiles.findDoc(FlowRouter.getParam('username'));
+    console.log(profile);
     const selectedInterests = profile.interests;
     return profile && _.map(Interests.findAll(),
             function makeInterestObject(interest) {
