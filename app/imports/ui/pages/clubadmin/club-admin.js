@@ -9,6 +9,7 @@ import './club-admin.html'
 
 const displaySuccessMessage = 'displaySuccessMessage';
 const displayErrorMessages = 'displayErrorMessages';
+const DELAY_FACTOR = 1000;
 
 var activeMemberData = {
   labels: [
@@ -92,7 +93,7 @@ Template.Club_Admin_Page.rendered=Meteor.setTimeout(function () {
       responsive: false
     }
   });
-}, 1000);
+}, DELAY_FACTOR);
 
 
 Template.Club_Admin_Page.helpers({
