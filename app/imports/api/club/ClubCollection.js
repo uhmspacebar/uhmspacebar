@@ -74,7 +74,7 @@ class ClubCollection extends BaseCollection {
       username: String,
     };
     check(
-        { clubName, caption, about, abbreviation,  picture, github, facebook, instagram, username},
+        { clubName, caption, about, abbreviation, picture, github, facebook, instagram, username },
         checkPattern
     );
 

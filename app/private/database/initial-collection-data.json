@@ -12,7 +12,42 @@
           "abbreviation": "IEEE",
           "majors": ["Electrical Engineering"],
           "clubInterests": ["Software Engineering"],
-          "picture": "lol",
+          "picture": "/images/image.jpg",
+          "github": "github",
+          "facebook": "facebook",
+          "instagram": "Instagram"
+        },
+        {
+          "clubName": "Association for Computing Machinery at Manoa",
+          "caption": "We're ACM at Manoa",
+          "about": "We are Computer Scientists",
+          "username": "acm_admin",
+          "abbreviation": "ACM",
+          "majors": ["Computer Science"],
+          "clubInterests": ["Software Engineering"],
+          "picture": "/images/image.jpg",
+          "github": "github",
+          "facebook": "facebook",
+          "instagram": "Instagram"
+        },
+        {
+          "clubName": "Buddhism in Action",
+          "caption": "We're Buddhists at Manoa",
+          "about": "We are here the enlightened",
+          "username": "ba_admin",
+          "clubInterests": ["Psychology"],
+          "picture": "/images/image.jpg",
+          "github": "github",
+          "facebook": "facebook",
+          "instagram": "Instagram"
+        },
+        {
+          "clubName": "LGBTQ+ Rainbow Alliance",
+          "caption": "We're LGBT at Manoa",
+          "about": "We are LGBT",
+          "username": "lgbt_admin",
+          "clubInterests": ["Photography"],
+          "picture": "/images/image.jpg",
           "github": "github",
           "facebook": "facebook",
           "instagram": "Instagram"
