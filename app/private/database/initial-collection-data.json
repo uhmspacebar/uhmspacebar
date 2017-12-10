@@ -256,59 +256,6 @@
           "picture": "/images/casanova.jpg"
         }
       ]
-    },
-    {
-      "name": "ClubCollection",
-      "contents": [
-        {
-          "name": "ACM",
-          "caption": "Welcome to ACM",
-          "about": "We are ACM",
-          "ownerUsername": "acm_admin",
-          // Remainder are optional
-          "picture": "/images/image.jpg",
-        },
-        {
-          "name": "IEEE",
-          "caption": "Welcome to IEEE",
-          "about": "We are IEEE",
-          "ownerUsername": "ieee_admin",
-          // Remainder are optional
-          "picture": "/images/image.jpg",
-        },
-        {
-          "name": "Accouting Club",
-          "caption": "Welcome to Accounting Club",
-          "about": "We are ACC",
-          "ownerUsername": "acc_admin",
-          // Remainder are optional
-          "picture": "/images/image.jpg",
-        },
-        {
-          "name": "Chemistry Club",
-          "caption": "Welcome to Chemistry Club",
-          "about": "We are CC",
-          "ownerUsername": "cc_admin",
-          // Remainder are optional
-          "picture": "/images/image.jpg",
-        },
-        {
-          "name": "Grey Hats",
-          "caption": "Welcome to Grey Hats",
-          "about": "We are Grey Hats",
-          "ownerUsername": "gh_admin",
-          // Remainder are optional
-          "picture": "/images/image.jpg",
-        },
-        {
-          "name": "LGBT",
-          "caption": "Welcome to LGBT",
-          "about": "We are LGBT",
-          "ownerUsername": "lgbt_admin",
-          // Remainder are optional
-          "picture": "/images/image.jpg",
-        }
-      ]
     }
   ]
 }
