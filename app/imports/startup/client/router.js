@@ -60,11 +60,11 @@ userRoutes.route('/profile', {
   },
 });
 
-export const filterPageRouteName = 'Filter_Page';
-userRoutes.route('/filter', {
-  name: filterPageRouteName,
+export const browsePageRouteName = 'Browse_Page';
+userRoutes.route('/browse', {
+  name: browsePageRouteName,
   action() {
-    BlazeLayout.render('User_Layout', { main: filterPageRouteName });
+    BlazeLayout.render('User_Layout', { main: browsePageRouteName });
   },
 });
 
