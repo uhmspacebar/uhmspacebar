@@ -1,101 +1,17 @@
 <template name="Browse_Page">
   {{#if Template.subscriptionsReady}}
     <div style="margin-top: 10px" class="ui container">
-      <!--
+
       <form class="ui equal width form filter-data-form">
         <div class="field">
           {{> Select_Form_Control label="Interests" options=interests multiple=true }}
+          {{> Select_Form_Control label="Majors" options=majors multiple=true }}
         </div>
         <button class="ui teal button" type="submit">Filter</button>
       </form>
 
-      {{> Browse_Page_Directory profiles=profiles }}
-      -->
-      <form class="ui equal width form filter-data-form">
-        <div class="field">
-          {{> Select_Form_Control label="Interests" options=interests multiple=true }}
-        </div>
-        <div class="field">
-          {{> Select_Form_Control label="Major" options=interests multiple=false }}
-        </div>
-        <div class="field">
-          {{> Select_Form_Control label="Sort by" options=interests multiple=false }}
-        </div>
-        <button class="ui teal button" type="submit">Filter</button>
-      </form>
-      <table class="ui celled structured table">
-        <thead>
-        <tr class="center aligned">
-          <th rowspan="2" class="eight wide">Spaceship <i class="rocket icon"></i></th>
-          <th colspan="2" class="eight wide">Mission <i class="flag icon"></i></th>
-        </tr>
-        <tr>
-          <th>Name</th>
-          <th>Description</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr>
-          <td rowspan="2">
-            <div class="ui items">
-              <div class="item">
-                <div class="ui tiny image">
-                  <img src="/images/image.jpg">
-                </div>
-                <div class="content">
-                  <a class="header">IEEE</a>
-                  <div class="description">
-                    <p>We are an associated student organization with ECUH and a registered RIO with the university. Our club room is located in HH411...</p>
-                  </div>
-                  <div class="extra">
-                    <a class="ui teal tag label">Engineering</a>&nbsp;&nbsp;
-                    <a class="ui teal tag label">Computer</a>&nbsp;&nbsp;
-                    <a class="ui teal tag label">Technology</a>&nbsp;&nbsp;
-                  </div>
-                </div>
-              </div>
-            </div>
-          </td>
-          <td>Mission 1</td>
-          <td class="right aligned">Upcoming mission</td>
-        </tr>
-        <tr>
-          <td>Mission 2</td>
-          <td class="right aligned">Upcoming mission</td>
-        </tr>
-        <tr>
-          <td rowspan="3">
-            <div class="ui items">
-              <div class="item">
-                <div class="ui tiny image">
-                  <img src="/images/image.jpg">
-                </div>
-                <div class="content">
-                  <a class="header">ACM</a>
-                  <div class="description">
-                    <p>Since 2004, ACM Mānoa has empowered students to tell their own stories by teaching cinematic narrative theories...</p>
-                  </div>
-                  <div class="extra">
-                    <a class="ui teal tag label">Computer</a>&nbsp;&nbsp;
-                    <a class="ui teal tag label">Technology</a>&nbsp;&nbsp;
-                  </div>
-                </div>
-              </div>
-            </div>
-          </td>
-          <td>Mission 1</td>
-          <td class="right aligned">Upcoming mission</td>
-        </tr>
-        <tr>
-          <td>Mission 2</td>
-          <td class="right aligned">Upcoming mission</td>
-        </tr>
-        <tr>
-          <td>Mission 3</td>
-          <td class="right aligned">Upcoming mission</td>
-        </tr>
-        </tbody>
-      </table>
+      {{> Browse_Page_Directory clubs=clubs }}
+
     </div>
   {{/if}}
 </template>
