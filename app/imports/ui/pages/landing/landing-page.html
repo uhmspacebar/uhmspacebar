@@ -47,22 +47,27 @@
 
   <div class="landing-section-2">
 
-    <div class="ui grid" style="padding-top:150px; padding-left:200px">
-      <div class="five wide column">
-        <canvas id="activemembers" width="200" height="200"></canvas>
+    <div class="ui grid" style="padding-top:100px;">
+
+      <div class="right floated aligned four column row">
+        <div class="ui three wide column">
+          <h1 class="landing-section-header">Keep track of member activity at all times.</h1>
+        </div>
+        <div class="four wide column">
+          <canvas id="activemembers" width="150px" height="150px"></canvas>
+        </div>
+        <div class="four wide column" style="padding-left:50px">
+          <canvas id="events" width="150px" height="150px"></canvas>
+        </div>
+        <div class="four wide column" style="padding-left:50px">
+          <canvas id="activity" width="150px" height="150px"></canvas>
+        </div>
       </div>
 
-      <div class="five wide column" style="padding-left:100px">
-        <canvas id="events" width="200" height="200"></canvas>
-      </div>
 
-      <div class="five wide column" style="padding-left:100px">
-        <canvas id="activity" width="200" height="200"></canvas>
-      </div>
 
-      <div class="ui eight wide middle aligned column">
-        <h1 class="landing-section-header">Keep track of member activity at all times.</h1>
-      </div>
+
+
 
     </div>
 
@@ -70,9 +75,13 @@
 
   <div class="landing-section-3">
     <div class="ui grid" style="padding-top:150px">
-      <h1 class="landing-section-header" style="padding-left:630px">Come enter SpaceBar.</h1>
+      <div class="center aligned one column row">
+        <div class="column">
+          <h1 class="landing-section-header">Come enter SpaceBar.</h1>
+        </div>
+      </div>
       <div class="ui center aligned sixteen wide column">
-        {{> Cas_Login size="large" text="Getting Started"}}
+        {{> Cas_Login size="massive" text="Get Started"}}
       </div>
     </div>
   </div>

@@ -1,7 +1,7 @@
 .user-layout-body {
   padding-top: 75px;
 }
-
+/*
 @keyframes move-twink-back {
   from {background-position:0 0;}
   to {background-position:-10000px 5000px;}
@@ -66,4 +66,4 @@
   -webkit-animation:move-clouds-back 200s linear infinite;
   animation:move-clouds-back 200s linear infinite;
 }
-
+*/

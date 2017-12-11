@@ -57,9 +57,10 @@
   padding: 10px 10px 30px 10px;
   color: #E5F9E7;
   height:1000px;
+  background-color: rgba(0,0,0,0.7);
 }
 
-.landing-section-2 {
+.landing-section-2 {;
   padding: 20px 10px 30px 30px;
   background-color: #132226;
   color: #E5F9E7;
@@ -70,12 +71,14 @@
   padding: 20px 10px 30px 30px;
   height: 600px;
   color: #E5F9E7;
+  background-color: rgba(0,0,0,0.7);
 }
 
 .landing-section-5 {
   padding: 20px 10px 20px 10px;
   height: 600px;
   color: #E5F9E7;
+  background-color: rgba(0,0,0,0.7);
 }
 
 .landing-section-1-welcome {
