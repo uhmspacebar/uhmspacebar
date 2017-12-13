@@ -24,7 +24,7 @@
           {{#if isActiveRoute "Register_Club_Page" }}Register Club{{/if}}
         </h5>
       </a>
-      <a class="{{ isActiveRoute "Club_Admin_Page" }} item" href="{{pathFor "Club_Admin_Page" username=routeUserName}}">
+      <a class="{{ isActiveRoute "Club_Admin_Page" }} item" href="{{pathFor "Club_Admin_Page" username=routeUserName}}" onclick="window.location.reload(true);">
         <h5 style="text-align: center;">
           <i style="font-size: 20px;" class="dashboard icon"></i>
           <br/>

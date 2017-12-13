@@ -2,8 +2,8 @@
   {{#if Template.subscriptionsReady}}
     {{#if clubAdminValidation}}
       <div style="margin-top: 10px" class="ui text container segment">
-        <div class="ui five cards">
-          <img class="profile card" src="http://images.clipartpanda.com/group-clipart-clip-art-group.png">
+        <div class="ui five cards" style="margin-left:50px">
+          <img class="profile card" src="{{clubProfile.picture}}">
             <a class="red card" style="margin-left:150px">
               <div class="image">
                 <img style="height: 20%;" src="https://i.pinimg.com/736x/e6/11/7e/e6117ed721289d630b83d84e76039759--beautiful-beach-beautiful-pictures.jpg">
@@ -23,16 +23,23 @@
         </div>
 
         <div class="ui lower bar container">
-          <div class="ui grid" style="width:600px">
-            <div class="three wide column">Club Name</div>
-            <div class="three wide column"></div>
-            <div class="three wide column">Pending Requests</div>
-            <div class="three wide column">Current Members</div>
-            <div class="three wide column">Contact Information</div>
+          <div class="ui grid" style="width:1000px; margin-left:50px">
+            <div class="four wide column" style="padding-left:75px">
+              <h2> {{clubProfile.clubName}} </h2>
+            </div>
+            <div class="four wide column" style="padding-left:120px">
+              <h2> Pending Requests </h2>
+            </div>
+            <div class="four wide column" style="padding-left:80px">
+              <h2> Current Members </h2>
+            </div>
+            <div class="four wide column" style="padding-left:20px">
+              <h2> Contact Information </h2>
+            </div>
           </div>
         </div>
 
-        <div class="ui text container">
+        <div class="ui container">
 
           <div class="ui grid">
 
