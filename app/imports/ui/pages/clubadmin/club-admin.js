@@ -41,7 +41,11 @@ Template.Club_Admin_Page.helpers({
     const profile = Clubs.findDoc(FlowRouter.getParam('username'));
     return profile.clubName;
   },
+  clubProfile() {
+    return Clubs.findDoc(FlowRouter.getParam('username'));
+  }
 });
+
 
 Template.Club_Admin_Page.onRendered=Meteor.setTimeout(function () {
   let activeMemberCtx = this.$("#activemembers");
@@ -49,9 +53,14 @@ Template.Club_Admin_Page.onRendered=Meteor.setTimeout(function () {
     type: 'doughnut',
     data: activeMemberData,
     options: {
-      responsive: false
-    }
-  });
+      legend: {
+        labels: {
+          fontColor: "black",
+          fontSize: 8
+        }
+      }
+  }}
+  );
 
   let eventsCtx = $("#events").get(0).getContext("2d");
   var myChart = new Chart(eventsCtx, {
@@ -69,7 +78,30 @@ Template.Club_Admin_Page.onRendered=Meteor.setTimeout(function () {
       }]
     },
     options: {
-      responsive: false
+      legend: {
+        labels: {
+          fontColor: "black",
+          fontSize: 8
+        }
+      },
+      scales: {
+        yAxes: [{
+          ticks: {
+            fontColor: "black",
+            fontSize: 8,
+            stepSize: 1,
+            beginAtZero: true
+          }
+        }],
+        xAxes: [{
+          ticks: {
+            fontColor: "black",
+            fontSize: 8,
+            stepSize: 1,
+            beginAtZero: true
+          }
+        }]
+      }
     }
   });
 
@@ -89,7 +121,30 @@ Template.Club_Admin_Page.onRendered=Meteor.setTimeout(function () {
       }]
     },
     options: {
-      responsive: false
+      legend: {
+        labels: {
+          fontColor: "black",
+          fontSize: 8
+        }
+      },
+      scales: {
+        yAxes: [{
+          ticks: {
+            fontColor: "black",
+            fontSize: 8,
+            stepSize: 1,
+            beginAtZero: true
+          }
+        }],
+        xAxes: [{
+          ticks: {
+            fontColor: "black",
+            fontSize: 8,
+            stepSize: 1,
+            beginAtZero: true
+          }
+        }]
+      }
     }
   });
 }, ONE_SECOND_DELAY);
