@@ -1,19 +1,39 @@
 <template name="User_Header">
-  <div class="ui top fixed borderless inverted pointing menu" style="height:50px;">
+  <div class="ui top fixed borderless inverted pointing menu" style="height:70px;">
     <div class="ui container">
       <div class="item"><h1><img src="/images/UHMSpacebar_logo_r1.png"
                                  style="width:200px; height:100px;padding-top:10px;"></h1></div>
-      <a class="{{isActiveRoute "Profile_Page"}} item" href="{{pathFor "Profile_Page"
-      username=routeUserName}}">Profile</a>
-      <a class="{{isActiveRoute "Browse_Page"}} item" href="{{pathFor "Browse_Page"
-      username=routeUserName}}">Browse</a>
-      <a class="{{isActiveRoute "Register_Club_Page"}} item" href="{{pathFor "Register_Club_Page"
-      username=routeUserName}}">Club Register</a>
-      <a class="{{isActiveRoute "Club_Admin_Page"}} item" href="{{pathFor "Club_Admin_Page"
-      username=routeUserName}}" onclick="window.location.reload(true);">Club Admin Page</a>
+      <a class="{{ isActiveRoute "Profile_Page" }} item" href="{{pathFor "Profile_Page" username=routeUserName}}">
+        <h5 style="text-align: center;">
+          <i style="font-size: 25px;" class="user icon"></i>
+          <br/>
+          {{#if isActiveRoute "Profile_Page" }}Profile{{/if}}
+        </h5>
+      </a>
+      <a class="{{ isActiveRoute "Browse_Page" }} item" href="{{pathFor "Browse_Page" username=routeUserName}}">
+        <h5 style="text-align: center;">
+          <i style="font-size: 25px;" class="search icon"></i>
+          <br/>
+          {{#if isActiveRoute "Browse_Page" }}Search{{/if}}
+        </h5>
+      </a>
+      <a class="{{ isActiveRoute "Register_Club_Page" }} item" href="{{pathFor "Register_Club_Page" username=routeUserName}}">
+        <h5 style="text-align: center;">
+          <i style="font-size: 25px;" class="sitemap icon"></i>
+          <br/>
+          {{#if isActiveRoute "Register_Club_Page" }}Register Club{{/if}}
+        </h5>
+      </a>
+      <a class="{{ isActiveRoute "Club_Admin_Page" }} item" href="{{pathFor "Club_Admin_Page" username=routeUserName}}">
+        <h5 style="text-align: center;">
+          <i style="font-size: 25px;" class="dashboard icon"></i>
+          <br/>
+          {{#if isActiveRoute "Club_Admin_Page" }}Club Dashboard{{/if}}
+        </h5>
+      </a>
       <div class="right aligned item">
         <div class="ui floating inverted dropdown button">
-          <div class="text">{{routeUserName}} &nbsp;&nbsp;&nbsp;</div>
+          <div class="text"><i class="user icon"></i>{{routeUserName}} &nbsp;&nbsp;&nbsp;</div>
           <i class="dropdown icon"></i>
           <div class="menu">
             <a class="item cas-logout">Logout</a>

@@ -19,6 +19,11 @@ Template.Browse_Page.onCreated(function onCreated() {
   this.messageFlags.set(selectedMajorsKey, undefined);
 });
 
+Template.Browse_Page_Directory.onRendered(function onRendered() {
+  this.$('.special.cards .image').dimmer({
+    on: 'hover'
+  });
+});
 Template.Browse_Page.helpers({
   profiles() {
     // Initialize selectedInterests to all of them if messageFlags is undefined.

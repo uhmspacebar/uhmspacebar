@@ -1,23 +1,52 @@
 <template name="Directory_Club">
 
   <div class="card">
-    <div class="content">
-      <img class="right floated mini ui image" src="{{ club.picture }}">
-      <div class="header">
-        {{ club.clubName }}
+    <div class="blurring dimmable image">
+      <div class="ui dimmer">
+        <div class="content">
+          <div class="center">
+            <div class="ui inverted button">
+              <h3><i class="child icon"></i> Join Now</h3>
+            </div>
+          </div>
+        </div>
       </div>
+      <img src="{{ club.picture }}">
+    </div>
+    <div class="content">
+      <a class="header">{{ club.clubName }}</a>
       <div class="meta">
-        {{ club.caption}}
+        <span class="date">{{ club.caption }}</span>
       </div>
       <div class="description">
         {{ club.about }}
       </div>
+    </div>
+    <div class="extra content">
+      <div class="description">
+        <h5><i class="student icon"></i> Major</h5>
+      </div>
       <div style="margin-top: 10px">
-        {{#each interest in club.interests}}
-          <a style="margin-bottom: 2px" class="ui teal tag small label">{{interest}}</a>
+        {{#each major in club.majors}}
+          <a style="margin-bottom: 2px" class="ui blue tag small label">{{major}}</a>
         {{/each}}
       </div>
-
+    </div>
+    <div class="extra content">
+      <div class="description">
+        <h5><i class="heart icon"></i> Interest</h5>
+      </div>
+      <div style="margin-top: 10px">
+        {{#each interest in club.interests}}
+          <a style="margin-bottom: 2px" class="ui black tag small label">{{interest}}</a>
+        {{/each}}
+      </div>
+    </div>
+    <div class="extra content">
+      <a>
+        <i class="users icon"></i>
+        2 Members
+      </a>
     </div>
     <div class="extra content">
       <div class="ui equal width center aligned grid">
