@@ -1,6 +1,7 @@
 import SimpleSchema from 'simpl-schema';
 import BaseCollection from '/imports/api/base/BaseCollection';
 import { Interests } from '/imports/api/interest/InterestCollection';
+import { Majors } from '/imports/api/major/MajorCollection';
 import { check } from 'meteor/check';
 import { Meteor } from 'meteor/meteor';
 import { _ } from 'meteor/underscore';
@@ -26,6 +27,8 @@ class ProfileCollection extends BaseCollection {
       bio: { type: String, optional: true },
       interests: { type: Array, optional: true },
       'interests.$': { type: String },
+      majors: { type: Array, optional: true },
+      'majors.$': { type: String },
       title: { type: String, optional: true },
       picture: { type: SimpleSchema.RegEx.Url, optional: true },
       github: { type: SimpleSchema.RegEx.Url, optional: true },
@@ -56,8 +59,8 @@ class ProfileCollection extends BaseCollection {
    * @returns The newly created docID.
    */
   define({
-           firstName = '', lastName = '', username, bio = '', interests = [], picture = '', title = '', github = '',
-           facebook = '', instagram = ''
+           firstName = '', lastName = '', username, bio = '', interests = [], majors = [], picture = '', title = '',
+           github = '', facebook = '', instagram = ''
          }) {
     // make sure required fields are OK.
     const checkPattern = {
@@ -77,9 +80,15 @@ class ProfileCollection extends BaseCollection {
     if (interests.length !== _.uniq(interests).length) {
       throw new Meteor.Error(`${interests} contains duplicates`);
     }
+    // Throw an error if any of the passed Major names are not defined.
+    Majors.assertNames(majors);
 
+    // Throw an error if there are duplicates in the passed major names.
+    if (majors.length !== _.uniq(majors).length) {
+      throw new Meteor.Error(`${interests} contains duplicates`);
+    }
     return this._collection.insert({
-      firstName, lastName, username, bio, interests, picture, title, github,
+      firstName, lastName, username, bio, interests, majors, picture, title, github,
       facebook, instagram
     });
   }
@@ -96,12 +105,13 @@ class ProfileCollection extends BaseCollection {
     const username = doc.username;
     const bio = doc.bio;
     const interests = doc.interests;
+    const majors = doc.interests;
     const picture = doc.picture;
     const title = doc.title;
     const github = doc.github;
     const facebook = doc.facebook;
     const instagram = doc.instagram;
-    return { firstName, lastName, username, bio, interests, picture, title, github, facebook, instagram };
+    return { firstName, lastName, username, bio, interests, majors, picture, title, github, facebook, instagram };
   }
 }
 
