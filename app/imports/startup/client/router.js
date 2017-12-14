@@ -12,7 +12,6 @@ FlowRouter.route('/', {
     BlazeLayout.render('Landing_Layout', { main: landingPageRouteName });
   },
 });
-
 /*                        DIRECTORY ROUTE                       */
 
 function addDirectoryBodyClass() {

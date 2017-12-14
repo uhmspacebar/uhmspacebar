@@ -12,6 +12,7 @@ Template.User_Header.helpers({
   },
   profile() {
     return Profiles.findDoc(FlowRouter.getParam('username'));
+
   },
 });
 
