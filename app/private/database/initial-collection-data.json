@@ -12,7 +12,7 @@
           "abbreviation": "IEEE",
           "majors": ["Electrical Engineering"],
           "interests": ["Software Engineering"],
-          "picture": "/images/image.jpg",
+          "picture": "https://www.ieee.org/ucm/groups/public/@ieee/@web/@org/@about/@whatis/documents/images/30014720.gif",
           "github": "github",
           "facebook": "facebook",
           "instagram": "Instagram"
@@ -25,7 +25,7 @@
           "abbreviation": "ACM",
           "majors": ["Computer Science"],
           "interests": ["Software Engineering"],
-          "picture": "/images/image.jpg",
+          "picture": "http://acm.ecs.fullerton.edu/img/acm-desktopcta.png",
           "github": "github",
           "facebook": "facebook",
           "instagram": "Instagram"
@@ -37,7 +37,7 @@
           "username": "ba_admin",
           "majors": ["Physics"],
           "interests": ["Psychology"],
-          "picture": "/images/image.jpg",
+          "picture": "https://vajrapani.org/wp-content/uploads/Buddhism-in-Action-Square-Logo.png",
           "github": "github",
           "facebook": "facebook",
           "instagram": "Instagram"
@@ -49,7 +49,7 @@
           "username": "lgbt_admin",
           "majors": ["Civil Engineering"],
           "interests": ["Photography"],
-          "picture": "/images/image.jpg",
+          "picture": "https://scontent-lax3-1.xx.fbcdn.net/v/t31.0-8/13913778_1409916099023476_8410532970534524518_o.png?oh=884816fc0e3872defba38c7ee5b5de8d&oe=5AC6123C",
           "github": "github",
           "facebook": "facebook",
           "instagram": "Instagram"
