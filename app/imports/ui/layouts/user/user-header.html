@@ -4,32 +4,40 @@
       <div class="item"><h1><img src="/images/UHMSpacebar_logo_r1.png"
                                  style="width:200px; height:100px;padding-top:10px;"></h1></div>
       {{#if profile.firstName}}
-      <a class="{{ isActiveRoute "Profile_Page" }} item" href="{{pathFor "Profile_Page" username=routeUserName}}">
+      <a id="homebar_label" class="{{ isActiveRoute "Profile_Page" }} item" href="{{pathFor "Profile_Page" username=routeUserName}}">
         <h5 style="text-align: center;">
           <i style="font-size: 20px;" class="user icon"></i>
           <br/>
-          {{#if isActiveRoute "Profile_Page" }}Profile{{/if}}
+          {{#if isActiveRoute "Profile_Page" }}Profile
+          {{else}} <span id="reveal_id">Profile</span>
+          {{/if}}
         </h5>
       </a>
-      <a class="{{ isActiveRoute "Browse_Page" }} item" href="{{pathFor "Browse_Page" username=routeUserName}}">
+      <a id="homebar_label1" class="{{ isActiveRoute "Browse_Page" }} item" href="{{pathFor "Browse_Page" username=routeUserName}}">
         <h5 style="text-align: center;">
           <i style="font-size: 20px;" class="search icon"></i>
           <br/>
-          {{#if isActiveRoute "Browse_Page" }}Search{{/if}}
+          {{#if isActiveRoute "Browse_Page" }}Search
+          {{else}} <span id="reveal_id1">Search</span>
+          {{/if}}
         </h5>
       </a>
-      <a class="{{ isActiveRoute "Register_Club_Page" }} item" href="{{pathFor "Register_Club_Page" username=routeUserName}}">
+      <a id="homebar_label2" class="{{ isActiveRoute "Register_Club_Page" }} item" href="{{pathFor "Register_Club_Page" username=routeUserName}}">
         <h5 style="text-align: center;">
           <i style="font-size: 20px;" class="sitemap icon"></i>
           <br/>
-          {{#if isActiveRoute "Register_Club_Page" }}Register Club{{/if}}
+          {{#if isActiveRoute "Register_Club_Page" }}Register Club
+          {{else}} <span id="reveal_id2">Register Club</span>
+          {{/if}}
         </h5>
       </a>
-      <a class="{{ isActiveRoute "Club_Admin_Page" }} item" href="{{pathFor "Club_Admin_Page" username=routeUserName}}" onclick="window.location.reload(true);">
+      <a id="homebar_label3" class="{{ isActiveRoute "Club_Admin_Page" }} item" href="{{pathFor "Club_Admin_Page" username=routeUserName}}" onclick="window.location.reload(true);">
         <h5 style="text-align: center;">
           <i style="font-size: 20px;" class="dashboard icon"></i>
           <br/>
-          {{#if isActiveRoute "Club_Admin_Page" }}Club Dashboard{{/if}}
+          {{#if isActiveRoute "Club_Admin_Page" }}Club Dashboard
+          {{else}} <span id="reveal_id3">Search</span>
+          {{/if}}
         </h5>
       </a>
       {{/if}}

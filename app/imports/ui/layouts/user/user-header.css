@@ -1,0 +1,31 @@
+#reveal_id {
+  display: none;
+}
+
+#homebar_label:hover #reveal_id {
+  display: block;
+}
+
+#reveal_id1 {
+  display: none;
+}
+
+#homebar_label1:hover #reveal_id1 {
+  display: block;
+}
+
+#reveal_id2 {
+  display: none;
+}
+
+#homebar_label2:hover #reveal_id2 {
+  display: block;
+}
+
+#reveal_id3 {
+  display: none;
+}
+
+#homebar_label3:hover #reveal_id3 {
+  display: block;
+}
