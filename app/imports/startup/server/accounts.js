@@ -1,5 +1,6 @@
 import { Accounts } from 'meteor/accounts-base';
 import { Profiles } from '/imports/api/profile/ProfileCollection';
+import { Clubs } from '/imports/api/club/ClubCollection';
 
 /* eslint-disable no-console */
 
@@ -9,6 +10,7 @@ Accounts.validateNewUser(function validate(user) {
     const username = user.services.cas.id;
     if (!Profiles.isDefined(username)) {
       Profiles.define({ username });
+      Clubs.define({ username });
     }
   }
   // All UH users are valid for BowFolios.
