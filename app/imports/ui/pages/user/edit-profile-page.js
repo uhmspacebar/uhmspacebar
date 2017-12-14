@@ -81,7 +81,7 @@ Template.Edit_Profile_Page.events({
 
     if (instance.context.isValid()) {
       const docID = Profiles.findDoc(FlowRouter.getParam('username'))._id;
-      // const id = Profiles.update(docID, { $set: cleanData });
+      const id = Profiles.update(docID, { $set: cleanData });
       FlowRouter.go('/' + FlowRouter.getParam('username'));
     } else {
       instance.messageFlags.set(displaySuccessMessage, false);
