@@ -1,0 +1,49 @@
+<template name="User_Profile">
+  <div class="ui grid">
+    <div class="ui centered aligned row">
+      <div class="ui card">
+        <div class="image">
+          <img src="{{#if profile.picture}}{{profile.picture}}{{else}}/images/image.jpg{{/if}}">
+        </div>
+        <div class="content">
+          <div class="header">{{profile.firstName}} {{profile.lastName}}
+            <a class="header" href="{{pathFor "Edit_Profile_Page" username=routeUserName}}" title="Edit Your Profile"><i class="edit icon"></i></a>
+          </div>
+
+          <div class="meta">
+            <span class="date">{{#if profile.title}}{{profile.title}}{{/if}}</span>
+          </div>
+          <div class="description">
+            <h3>
+              {{#if profile.majors}}
+              <i class="student icon"></i>
+                {{#each major in profile.majors}}<br/>
+                  {{major}}
+                {{/each}}
+              {{/if}}
+            </h3>
+            <p class="text">{{#if profile.picture}}{{profile.bio}}{{/if}}</p>
+          </div>
+        </div>
+        <div class="extra content">
+          <div class="ui equal width center aligned grid">
+            <div class="column"><a href="mailto:{{ profile.username}}@hawaii.edu"><i class="big mail icon"></i></a>
+            </div>
+            {{#if profile.github }}
+              <div class="column"><a href="https://github.com/{{ profile.github}}"><i class="big github icon"></i></a>
+              </div>
+            {{/if}}
+            {{#if profile.facebook }}
+              <div class="column"><a href="https://facebook.com/{{ profile.facebook}}"><i class="big facebook icon"></i></a>
+              </div>
+            {{/if}}
+            {{#if profile.instagram }}
+              <div class="column"><a href="https://instagram.com/{{ profile.instagram}}"><i
+                  class="big instagram icon"></i></a></div>
+            {{/if}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
