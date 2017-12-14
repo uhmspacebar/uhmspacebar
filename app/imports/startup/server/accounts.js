@@ -7,8 +7,10 @@ import { Profiles } from '/imports/api/profile/ProfileCollection';
 Accounts.validateNewUser(function validate(user) {
   if (user) {
     const username = user.services.cas.id;
+    const firstName = '';
+    const lastName = 'Temp';
     if (!Profiles.isDefined(username)) {
-      Profiles.define({ username });
+      Profiles.define({ username, firstName, lastName });
     }
   }
   // All UH users are valid for BowFolios.

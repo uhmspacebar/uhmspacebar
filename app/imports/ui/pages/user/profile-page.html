@@ -5,7 +5,14 @@
     {{#if profile.firstName}}
       {{> Home_Page}}
     {{else}}
-  <div class="ui text container segment">
+      <div class="ui text container attached info message">
+        <div class="header">
+          Welcome to UHM SpaceBar
+        </div>
+        <p>Please tell us a little about yourself before we can enter the space station.</p>
+      </div>
+  <div class="ui text container attached segment">
+
     <div class="ui dividing header">
       Profile
     </div>
@@ -13,7 +20,7 @@
 
       <div class="fields">
         {{> Text_Form_Control label="First" placeholder="Philip" required=true value=profile.firstName errorMessage=(fieldError "firstName")}}
-        {{> Text_Form_Control label="Last" placeholder="Johnson" required=true value=profile.lastName errorMessage=(fieldError "lastName")}}
+        {{> Text_Form_Control label="Last" placeholder="Johnson" required=true value='' errorMessage=(fieldError "lastName")}}
 
       </div>
 
@@ -26,7 +33,7 @@
         {{> Select_Form_Control label="Interests" options=interests errorMessage=(fieldError "interests") multiple=true }}
       </div>
       <div class="field">
-        {{> Select_Form_Control label="Majors" required=true options=majors errorMessage=(fieldError "majors") multiple=true}}
+        {{> Select_Form_Control label="Majors" options=majors errorMessage=(fieldError "majors") multiple=true}}
       </div>
       <div class="fields">
 

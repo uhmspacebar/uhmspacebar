@@ -3,7 +3,7 @@
     <div class="ui centered aligned row">
       <div class="ui card">
         <div class="image">
-          <img src="{{profile.picture}}">
+          <img src="{{#if profile.picture}}{{profile.picture}}{{else}}/images/image.jpg{{/if}}">
         </div>
         <div class="content">
           <div class="header">{{profile.firstName}} {{profile.lastName}}
@@ -11,16 +11,18 @@
           </div>
 
           <div class="meta">
-            <span class="date">{{profile.title}}</span>
+            <span class="date">{{#if profile.title}}{{profile.title}}{{/if}}</span>
           </div>
           <div class="description">
             <h3>
+              {{#if profile.majors}}
               <i class="student icon"></i>
-              {{#each major in profile.majors}}<br/>
-                {{major}}
-              {{/each}}
+                {{#each major in profile.majors}}<br/>
+                  {{major}}
+                {{/each}}
+              {{/if}}
             </h3>
-            <p class="text">{{profile.bio}}</p>
+            <p class="text">{{#if profile.picture}}{{profile.bio}}{{/if}}</p>
           </div>
         </div>
         <div class="extra content">

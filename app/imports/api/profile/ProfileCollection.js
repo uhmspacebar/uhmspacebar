@@ -23,7 +23,7 @@ class ProfileCollection extends BaseCollection {
       username: { type: String },
       // Remainder are optional
       firstName: { type: String, optional: true },
-      lastName: { type: String, optional: true },
+      lastName: { type: String },
       bio: { type: String, optional: true },
       interests: { type: Array, optional: true },
       'interests.$': { type: String },

@@ -3,6 +3,7 @@
     <div class="ui container">
       <div class="item"><h1><img src="/images/UHMSpacebar_logo_r1.png"
                                  style="width:200px; height:100px;padding-top:10px;"></h1></div>
+      {{#if profile.firstName}}
       <a class="{{ isActiveRoute "Profile_Page" }} item" href="{{pathFor "Profile_Page" username=routeUserName}}">
         <h5 style="text-align: center;">
           <i style="font-size: 20px;" class="user icon"></i>
@@ -33,13 +34,14 @@
       </a>
       <div class="ui right aligned dropdown fitted item" >
         <div class="ui floating inverted button">
-          <i class="user icon"></i>{{routeUserName}} <i class="dropdown icon"></i>
+          <i class="user icon"></i>{{profile.firstName}} {{profile.lastName}}  <i class="dropdown icon"></i>
         </div>
           <div class="menu">
             <a class="item " href="{{pathFor "Edit_Profile_Page" username=routeUserName}}">Edit Profile</a>
             <a class="item cas-logout">Logout</a>
           </div>
       </div>
+      {{/if}}
     </div>
   </div>
 </template>
