@@ -32,9 +32,11 @@
           {{#if isActiveRoute "Club_Admin_Page" }}Club Dashboard{{/if}}
         </h5>
       </a>
-      <div class="ui right aligned dropdown fitted item" >
-        <div class="ui floating inverted button">
-          <i class="user icon"></i>{{profile.firstName}} {{profile.lastName}}&nbsp;&nbsp;&nbsp;
+      {{/if}}
+      <div class="ui right aligned dropdown item" >
+        <div class="floating inverted">
+          <i class="user icon"></i>
+          {{#if profile.firstName}}{{profile.firstName}} {{profile.lastName}}{{/if}}&nbsp;&nbsp;&nbsp;
           <i class="dropdown icon"></i>
         </div>
           <div class="menu">
@@ -42,7 +44,6 @@
             <a class="item cas-logout">Logout</a>
           </div>
       </div>
-      {{/if}}
     </div>
   </div>
 </template>
