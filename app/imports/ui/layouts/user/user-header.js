@@ -1,6 +1,7 @@
 import { Template } from 'meteor/templating';
 import { FlowRouter } from 'meteor/kadira:flow-router';
 import { Profiles } from '/imports/api/profile/ProfileCollection';
+import { Meteor } from 'meteor/meteor';
 
 Template.User_Header.onCreated(function onCreated() {
   this.subscribe(Profiles.getPublicationName());
@@ -11,7 +12,7 @@ Template.User_Header.helpers({
   },
   profile() {
     return Profiles.findDoc(FlowRouter.getParam('username'));
-  }
+  },
 });
 
 Template.User_Header.onRendered(function onRendered() {
